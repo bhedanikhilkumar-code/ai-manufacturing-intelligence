@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-manufacturing-intelligence"
+version = "0.1.0"
+description = "AI-driven manufacturing intelligence platform for batch optimization"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Codex"}]
+dependencies = [
+  "fastapi>=0.111.0",
+  "uvicorn[standard]>=0.30.0",
+  "streamlit>=1.36.0",
+  "pandas>=2.2.2",
+  "numpy>=1.26.4",
+  "scikit-learn>=1.5.1",
+  "scipy>=1.13.1",
+  "matplotlib>=3.9.0",
+  "plotly>=5.23.0",
+  "pydantic>=2.8.2"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.2",
+  "httpx>=0.27.0"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
